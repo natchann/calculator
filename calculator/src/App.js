@@ -5,7 +5,7 @@ import { Button } from './components/Buttons/Button';
 import { Input } from './components/Input/Input';
 import { ClearButton } from './components/ClearButton/ClearButton';
 import * as math from 'mathjs';
-import { SaveInput } from './components/SaveInput/SaveInput';
+
 
 class App extends Component {
   constructor(props){
@@ -19,14 +19,18 @@ class App extends Component {
     this.setState({input: this.state.input + value});
   };
 
+  
 handleEqual=()=>{
   this.setState({input: math.evaluate(this.state.input)});
 };
+
+
 
   render(){
     return (
       <div className="app">
   <div className='calc-wrapper'>
+  
     <Input input={this.state.input}></Input>
     <div className="row">
 <Button handleClick={this.addToInput}>7</Button>
@@ -52,17 +56,13 @@ handleEqual=()=>{
 <Button handleClick={()=>this.handleEqual()}>=</Button>
 <Button handleClick={this.addToInput}>-</Button>
     </div>
+
     <div className="row">
       <ClearButton handleClear={()=>this.setState({input: " "})}>
         Clear
         </ClearButton>
     </div>
-    <div className='row'>
-      <SaveInput>{this.state.children}</SaveInput>
-    </div>
-    <div className='row'>
-    <Button >Save Result</Button>
-    </div>
+
 
   </div>
        

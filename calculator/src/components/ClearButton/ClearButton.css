@@ -8,4 +8,5 @@
     background-color: lightgrey;
     flex: 1;
     outline: 1px solid lightgray;
+    cursor: pointer;
 } 
